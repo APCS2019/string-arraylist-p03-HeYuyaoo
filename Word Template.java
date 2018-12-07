@@ -48,7 +48,7 @@ public class Word{
                 haha.add(wordList.get(i));
             }
         }
-        for(int a=0;a<wordList.size();a++){
+        for(int a=0;a<haha.size();a++){
             wordList.set(a,haha.get(a));
         }
 
