@@ -14,19 +14,21 @@ public class Word{
     public static String scrambleWord(String word)
     {
         /* part (a) */
-        int index=word.indexOf("A");
-        String result=word;
-        String temp=word.subString(0,index);
-        if(index==-1||(index==word.length()-1)){
-            return word;
+        String temp="";
+        for(int i=0;i<word.length()-1;i++){
+            String a= word.substring(i,i+1);
+            String b=word.substring(i+1,i+2);
+            if(a.equals("A")&&!b.equals("A")){
+                temp+=b+a;
+                i++;
+            }
+            else{
+                temp+=a;
+                if(i==w.length()-2){
+                    temp+=word.substring(i+1,i+2);
+            }
         }
-        while(index!=-1&&(!word.subString(index+1,index+2).equals("A")){
-            result=temp+word.subString(index+1+temp.length(),index+2+temp.length())+"A"+word.subString(index+2+temp.length());
-            temp=temp+word.subString(index+1+temp.length(),index+2+temp.length())+"A";
-            index=word.subString(index+temp.length()).indexOf("A");
-        }
-              return result;
-            
+      return temp;      
     }
     /** Modifies wordList by replacing each word with its scrambled
      *  version, removing any words that are unchanged as a result of scrambling.
